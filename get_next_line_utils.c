@@ -6,7 +6,7 @@
 /*   By: rimagalh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 17:25:42 by rimagalh          #+#    #+#             */
-/*   Updated: 2024/11/13 17:18:43 by rimagalh         ###   ########.fr       */
+/*   Updated: 2024/11/13 17:26:18 by rimagalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,16 @@ char	*ft_strjoin(char const *s1, char const *s2)
 			new[j++] = s2[i++];
 	new[j] = '\0';
 	return (new);
+}
+
+static size_t	ft_strlen(const char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
 }
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
