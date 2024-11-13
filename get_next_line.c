@@ -6,7 +6,7 @@
 /*   By: rimagalh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 17:25:43 by rimagalh          #+#    #+#             */
-/*   Updated: 2024/11/13 17:21:54 by rimagalh         ###   ########.fr       */
+/*   Updated: 2024/11/13 17:24:24 by rimagalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,14 +48,12 @@ static char	*ft_read(char *read_chars, int fd)
 	{
 		res = read(fd, current, BUFFER_SIZE);
 		if (res == -1)
-		{
-			free(current);
-			return (NULL);
-		}
+			return (free(current), NULL);
 		current[res] = '\0';
 		temp = ft_strjoin(read_chars, current);
 		free(read_chars);
 		read_chars = temp;
+		free(temp);
 		if (ft_strchr(read_chars, '\n'))
 			break ;
 	}
