@@ -6,33 +6,11 @@
 /*   By: rimagalh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 17:25:43 by rimagalh          #+#    #+#             */
-/*   Updated: 2024/11/13 17:28:17 by rimagalh         ###   ########.fr       */
+/*   Updated: 2024/11/13 18:20:22 by rimagalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
-char	*get_next_line(int fd)
-{
-	static char	*read_chars;
-	char		*line;
-
-	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
-		return (NULL);
-	if (!read_chars)
-		read_chars = ft_strdup("");
-	if (!ft_strchr(read_chars, '\n'))
-		read_chars = ft_read(read_chars, fd);
-	if (!read_chars || *read_chars == '\0')
-	{
-		free(read_chars);
-		read_chars = NULL;
-		return (NULL);
-	}
-	line = ft_create_line(read_chars);
-	read_chars = ft_clean_chars(read_chars);
-	return (line);
-}
 
 static char	*ft_read(char *read_chars, int fd)
 {
@@ -89,3 +67,26 @@ static char	*ft_clean_chars(char *read_chars)
 	free(read_chars);
 	return (new_chars);
 }
+
+char	*get_next_line(int fd)
+{
+	static char	*read_chars;
+	char		*line;
+
+	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
+		return (NULL);
+	if (!read_chars)
+		read_chars = ft_strdup("");
+	if (!ft_strchr(read_chars, '\n'))
+		read_chars = ft_read(read_chars, fd);
+	if (!read_chars || *read_chars == '\0')
+	{
+		free(read_chars);
+		read_chars = NULL;
+		return (NULL);
+	}
+	line = ft_create_line(read_chars);
+	read_chars = ft_clean_chars(read_chars);
+	return (line);
+}
+
