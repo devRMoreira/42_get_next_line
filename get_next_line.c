@@ -6,7 +6,7 @@
 /*   By: rimagalh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 17:25:43 by rimagalh          #+#    #+#             */
-/*   Updated: 2024/11/17 12:32:20 by rimagalh         ###   ########.fr       */
+/*   Updated: 2024/11/17 12:54:48 by rimagalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static char	*ft_read(char *read_chars, int fd)
 	{
 		res = read(fd, current, BUFFER_SIZE);
 		if (res == -1)
-			return (free(current), NULL);
+			return (free(current), free(read_chars), NULL);
 		current[res] = '\0';
 		temp = ft_strjoin(read_chars, current);
 		free(read_chars);
@@ -73,7 +73,7 @@ char	*get_next_line(int fd)
 	static char	*read_chars;
 	char		*line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
+	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	if (!read_chars)
 		read_chars = ft_strdup("");

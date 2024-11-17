@@ -6,14 +6,14 @@
 /*   By: rimagalh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 17:25:44 by rimagalh          #+#    #+#             */
-/*   Updated: 2024/11/17 12:32:14 by rimagalh         ###   ########.fr       */
+/*   Updated: 2024/11/17 12:36:43 by rimagalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 3
+#  define BUFFER_SIZE 1000000
 # endif
 
 # include <stdio.h>
