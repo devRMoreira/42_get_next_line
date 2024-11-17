@@ -6,7 +6,7 @@
 /*   By: rimagalh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 17:25:44 by rimagalh          #+#    #+#             */
-/*   Updated: 2024/11/13 18:17:27 by rimagalh         ###   ########.fr       */
+/*   Updated: 2024/11/17 12:32:14 by rimagalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,5 @@ char				*ft_strchr(char *str, int c);
 char				*ft_strdup(const char *s);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
-	
+
 #endif

@@ -6,7 +6,7 @@
 /*   By: rimagalh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 17:25:43 by rimagalh          #+#    #+#             */
-/*   Updated: 2024/11/13 18:20:22 by rimagalh         ###   ########.fr       */
+/*   Updated: 2024/11/17 12:32:20 by rimagalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,4 +89,3 @@ char	*get_next_line(int fd)
 	read_chars = ft_clean_chars(read_chars);
 	return (line);
 }
-
